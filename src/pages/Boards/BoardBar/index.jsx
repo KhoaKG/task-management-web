@@ -15,11 +15,14 @@ import PersonAddIcon from '@mui/icons-material/PersonAdd';
 const MENU_STYLES = {
   paddingX: '5px',
   borderRadius: '4px',
-  color : 'primary.main',
-  bgcolor: 'white',
+  color : 'white',
+  bgcolor: 'transparent',
   border: 'none',
   '& .MuiSvgIcon-root':{
-    color: 'primary.main',
+    color: 'white',
+  },
+  '&:hover':{
+    bgcolor: 'primary.50',
   },
 }
 function BoardBar() {
@@ -33,7 +36,8 @@ function BoardBar() {
       backgroundColor: 'white',
       gap: 2,
       overflowX: 'auto',
-      borderTop: '1px solid #00bfa5'
+      borderBottom: '1px solid white',
+      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#34495e' : '#1976d2')
       }}>
 
         <Box sx={{display: 'flex', alignItems: 'center', gap: 2, paddingX: 2}}>
@@ -70,14 +74,28 @@ function BoardBar() {
         </Box>
 
         <Box sx={{display: 'flex', alignItems: 'center', gap: 2}}>
-          <Button variant="outlined" startIcon={<PersonAddIcon/>}>Invite</Button>
+          <Button 
+            variant="outlined" 
+            startIcon={<PersonAddIcon/>}
+            sx={{
+              color: 'white',
+              borderColor: 'white',
+              '&:hover':{
+                borderColor: 'white',
+              }
+            }}
+          >
+            Invite
+          </Button>
           <AvatarGroup 
             max={4} 
             sx={{
+              gap: '10px',
               '& .MuiAvatar-root':{
                 height: 34,
                 width: 34,
                 fontSize: 16,
+                border: 'none'
               }
             }}>
             <Tooltip title="Nhat Khoa">

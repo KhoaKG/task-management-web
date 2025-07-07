@@ -10,23 +10,23 @@ const theme = extendTheme({
     boardBarHeight: '60px'
   },
   colorSchemes: {
-    light: {
-      palette: {
-        primary: {
-          main: green[500],
-          secondary: deepOrange[500],
-          light: red[500]
-        },
-      },
-    },
-    dark: {
-      palette: {
-        primary: {
-          main: cyan[500],
-          secondary: orange[500]
-        },
-      },
-    },
+    // light: {
+    //   palette: {
+    //     primary: {
+    //       main: green[500],
+    //       secondary: deepOrange[500],
+    //       light: red[500]
+    //     },
+    //   },
+    // },
+    // dark: {
+    //   palette: {
+    //     primary: {
+    //       main: cyan[500],
+    //       secondary: orange[500]
+    //     },
+    //   },
+    // },
   },
   components: {
     // Name of the component
@@ -36,40 +36,46 @@ const theme = extendTheme({
         root: {
           // Some CSS
           textTransform: 'none',
+          borderWidth: '0.5px',
+          '&:hover':{
+            borderWidth: '2px'
+          }
         },
       },
     },
     MuiOutlinedInput: {
       styleOverrides:{
         // Name of the slot
-        root: ({theme}) => (
-          {
-            color: theme.palette.primary.main,
-            fontSize: '0.875rem',
-            '.MuiOutlinedInput-notchedOutline':{
-              borderColor: theme.palette.primary.main
-            },
-            '&:hover':{
-              '.MuiOutlinedInput-notchedOutline':{
-                  borderColor: theme.palette.primary.main
-              },
-            },
-            '& fieldset':{
-              borderWidth: '1px !important'
-            }
+        root: {
+          // color: theme.palette.primary.main,
+          fontSize: '0.875rem',
+          // '.MuiOutlinedInput-notchedOutline':{
+          //   borderColor: theme.palette.primary.main
+          // },
+          // '&:hover':{
+          //   '.MuiOutlinedInput-notchedOutline':{
+          //       borderColor: theme.palette.primary.main
+          //   },
+          // },
+          '& fieldset':{
+            borderWidth: '0.5px !important'
+          },
+          '&:hover fieldset':{
+            borderWidth: '2px !important'
+          },
+          '&.Mui-focused fieldset':{
+            borderWidth: '2px !important'
           }
-        )
+        }
       },
     },
     MuiInputLabel: {
       styleOverrides: {
         // Name of the slot
-        root: ({theme}) => (
-          {
-            color: theme.palette.primary.main,
-            fontSize: '0.875rem',
-          }
-        )
+        root: {
+          // color: theme.palette.primary.main,
+          fontSize: '0.875rem',
+        }
       },
     },
     MuiCssBaseline:{
@@ -80,11 +86,11 @@ const theme = extendTheme({
             height: '8px',
           },
           '*::-webkit-scrollbar-thumb': {
-            backgroundColor: '#bdc3c7',
+            backgroundColor: '#dcdde1',
             borderRadius: '8px'
           },
           '*::-webkit-scrollbar-thumb:hover': {
-            backgroundColor: '#00b894',
+            backgroundColor: 'white',
           }
         }
       }
