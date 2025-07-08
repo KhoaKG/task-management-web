@@ -95,7 +95,12 @@ function BoardBar() {
                 height: 34,
                 width: 34,
                 fontSize: 16,
-                border: 'none'
+                border: 'none',
+                color: 'white',
+                cursor: 'pointer',
+                "&:first-of-type":{
+                  bgcolor: '#a4b0ce'
+                }
               }
             }}>
             <Tooltip title="Nhat Khoa">
